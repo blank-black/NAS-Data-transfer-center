@@ -17,8 +17,8 @@
 
 ***
 
-## .sh脚本功能   
-
+.sh脚本功能   
+---
 ### 执行顺序   
 先在系统root用户下执行test.sh
 添加用户操作:先执行add_user.sh再执行add_r.sh/add_rw.sh
