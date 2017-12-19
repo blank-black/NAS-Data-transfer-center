@@ -1,4 +1,21 @@
 # NAS数据转发中心   
+数据转发中心NAS端设计。
+
+***
+
+## 目录
+* [.sh脚本功能](#sh脚本功能)
+	* [执行顺序](#执行顺序)
+	* [test.sh](#test.sh)
+	* [add_user.sh](#add_user.sh)
+	* [del_user.sh](#del_user.sh)
+	* [reset_pwd.sh](#reset_pwd.sh)
+	* [add_r.sh](#add_r.sh)
+	* [add_rw.sh](#add_rw.sh)
+	* [add_readlist.sh](#add_readlist.sh)
+	* [add_readwritelist.sh](#add_readwritelist.sh)
+
+***
 
 ## .sh脚本功能   
 
