@@ -7,7 +7,7 @@
 
 * [NAS](#NAS)
 * [Web](#Web)
-* [Forwarding Center](#Forwarding Center)
+* [ForwardingCenter](#ForwardingCenter)
 
 ***
 
@@ -17,5 +17,5 @@
 ## Web
 此文件夹包含Web端的设计和使用。
 
-## Forwarding Center
+## ForwardingCenter
 此文件夹包含数据转发中心的设计和实现。
