@@ -1,0 +1,18 @@
+1.将 /etc/httpd/conf里面的
+<Directory "/var/www">
+   AllowOverride None
+    # Allow open access:
+    Require all granted
+</Directory>
+改成
+<Directory "/var/www/html">
+    Options Indexes FollowSymLinks
+     AllowOverride None
+     Order allow,deny
+     Allow from all
+</Directory>
+2.将/etc/httpd/conf中的welcome.conf改名(比如welcome.conf.bak)
+3.随便传几个文件到/var/www/html下
+并将目录下的index.html,index.php,index.htm清掉(如果存在这种文件会直接执行 我们之后的前端网页也就是放在这个目录下执行 测试时先不放网页形式的文件)
+4.service httpd restart
+5.浏览器访问虚拟机ip
