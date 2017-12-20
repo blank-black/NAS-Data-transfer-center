@@ -1,5 +1,7 @@
 /* user_info table */
 
+USE nasdb;
+
 DROP TABLE IF EXISTS `user_info`;
 
 CREATE TABLE `user_info` (
