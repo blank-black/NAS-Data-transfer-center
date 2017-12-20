@@ -1,5 +1,7 @@
 /* user_login_log table */
 
+USE nasdb;
+
 DROP TABLE IF EXISTS `user_login_log`;
 
 CREATE TABLE `user_login_log` (

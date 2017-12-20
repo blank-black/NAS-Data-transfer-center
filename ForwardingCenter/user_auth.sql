@@ -1,5 +1,10 @@
 /* user_auth table */
 
+DROP DATABASE IF EXISTS nasdb;
+CREATE DATABASE nasdb;
+
+USE nasdb;
+
 DROP TABLE IF EXISTS `user_auth`;
 
 CREATE TABLE `user_auth` (
