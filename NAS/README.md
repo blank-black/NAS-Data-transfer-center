@@ -68,3 +68,20 @@
 - 仅root执行  
 - 增加用户具有读写另一用户目录的权限   
 - 传参 $1:待修改目录权限用户名 $2:添加可rw访问$1的用户   
+
+### port_trans.sh  
+- 用于建立端口转发   
+- 将从DTC收到的数据转发给自己的80端口 自己80端口收到的数据转发给DTC
+- 在nas_client.cpp中被调用  
+- 传参 $1:DTCip $2:DTCport $3:和DTC收发数据端口   
+
+## 连接DTC的client  
+
+### nas_client.cpp   
+- 用于连接DTC并实现对接   
+- connect成功后发送自己ID   
+- 收到OK后 调用端口转接将从DTC收到的数据转发给自己的80端口 自己80端口收到的数据转发给DTC 实现外网的与内网httpd相同的界面访问   
+- 全局变量可设置自己的ID IP port  
+- 传参 $1:DTCip $2:DTCport   
+
+
