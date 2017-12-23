@@ -23,6 +23,5 @@ setsebool -P samba_enable_home_dirs on
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 
 systemctl enable smb.service
-echo '初始化成功,5秒后系统重启'
-sleep(5)
+echo '初始化成功,系统即将重启'
 init 6
