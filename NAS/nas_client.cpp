@@ -191,7 +191,9 @@ int main(int argc ,char* argv[])
 		strcat(str, " ");
 		strcat(str, argv[1]);
 		strcat(str, " ");
-		strcat(str, itoa(port));
+		char strport[10];
+		sprintf(strport, "%d", port);  
+		strcat(str, strport);
 		strcat(str, " ");
 		strcat(str, argv[2]);
 
