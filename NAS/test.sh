@@ -3,7 +3,7 @@
 
 
 mkdir /log
-chmod 755 /log
+chmod 777 /log
 
 echo '[log]
         path = /log
