@@ -13,6 +13,6 @@ CREATE TABLE `user_auth` (
   `loginPwd` varchar(50) CHARACTER SET latin1 COLLATE latin1_bin NOT NULL DEFAULT '' COMMENT '登录密码',
   `nasId` varchar(20) COLLATE gbk_bin NOT NULL DEFAULT '' COMMENT 'NAS账号',
 
-  PRIMARY KEY (`userId`, `nasId`),
+  PRIMARY KEY (`userId`, `loginName`),
   UNIQUE KEY `only` (`loginName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=gbk COMMENT='用户授权表'
