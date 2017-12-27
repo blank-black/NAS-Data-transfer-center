@@ -10,7 +10,7 @@ if(isset($_POST['btn-signup']))
 {
  $uname = mysql_real_escape_string($_POST['uname']);
  $email = mysql_real_escape_string($_POST['email']);
-
+ $repass=$_POST['repass'];
  $pass=$_POST['pass'];
  if(strlen($pass)<6){  
          ?>
@@ -35,7 +35,12 @@ if(isset($_POST['btn-signup']))
         <script>alert('password too simple ');</script>
         <?php   
 		
-	}	
+	}
+else if($repass!=$pass)	{
+	?>
+        <script>alert(' The password did not match the re-typed password ');</script>
+        <?php
+}
  else{
 	 $upass = md5(mysql_real_escape_string($_POST['pass']));
  $sql="INSERT INTO user_auth(loginName,loginPwd,nasId) VALUES('$uname','$upass','$email')";
@@ -77,6 +82,9 @@ if(isset($_POST['btn-signup']))
 </tr>
 <tr>
 <td><input type="password" name="pass" placeholder="Your Password" required /></td>
+</tr>
+<tr>
+<td><input type="password" name="repass" placeholder="Your Password" required /></td>
 </tr>
 The password needs to include three of four characters: uppercase letters, lowercase letters, special characters and numbers
 <tr>
