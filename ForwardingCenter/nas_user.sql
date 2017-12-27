@@ -1,9 +1,6 @@
 /* nas_user table */
 
-DROP DATABASE IF EXISTS nasdb;
-CREATE DATABASE nasdb;
-
-USE nasdb;
+USE G1551265;
 
 DROP TABLE IF EXISTS `nas_user`;
 
