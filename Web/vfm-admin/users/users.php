@@ -11,8 +11,8 @@
   array (
     'name' => 'admin1',
     'pass' => '$1$EIDHv8Zc$wxT5BW2x5jaXm6e0jWnMg1',
-    'role' => 'user',
-    'dir' => '["aa","bb"]',
+    'role' => 'admin',
+    'dir' => '["bb"]',
+    'quota' => 'read',
   ),
-
 );

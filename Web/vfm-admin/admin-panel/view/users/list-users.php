@@ -29,7 +29,7 @@
                                 $usermail = isset($user['email']) ? $user['email'] : '';
                                 $userdirs = isset($user['dir']) ? json_decode($user['dir'], true) : false;
                                 $userquota = ($userdirs && isset($user['quota'])) ? $user['quota'] : '';
-                                $printquota = strlen($userquota) > 0 ? $userquota.' MB' : '';
+                                $printquota = strlen($userquota) > 0 ? $userquota.' ' : '';
                                 $listuserdirs = false;
                                 $gooduserdirs = false;
                                 if ($userdirs) {

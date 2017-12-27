@@ -29,7 +29,9 @@
   'appearance' => '外观',
   'application_url' => '站点URL',
   'available_folders' => '选择文件夹',
-  'available_space' => '空间容量',
+
+  'available_space' => '设置权限',
+  
   'available_space_exhausted' => '可用空间耗尽',
   'avatar' => '头像',
   'browse' => '选择上传文件',
@@ -218,7 +220,9 @@
   'trendline' => '趋势',
   'type' => '类型',
   'unable_to_read_dir' => '无法读取路径',
-  'unlimited' => '无限',
+  
+  'unlimited' => '无权限',
+  
   'update' => '修改',
   'update_profile' => '修改',
   'updated' => '修改成功',
