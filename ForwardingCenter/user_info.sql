@@ -1,6 +1,6 @@
 /* user_info table */
 
-USE nasdb;
+USE G1551265;
 
 DROP TABLE IF EXISTS `user_info`;
 
