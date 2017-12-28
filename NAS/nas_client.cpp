@@ -18,7 +18,7 @@
 using namespace std;
 #define BUFSIZE 100
 #define QUEUE 100
-char ID[]="ID:001";
+char ID[]="001";
 char ip[]="192.168.2.230";
 int port=2333;
 
