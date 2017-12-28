@@ -8,11 +8,11 @@ USE G1551265;
 DROP TABLE IF EXISTS `user_auth`;
 
 CREATE TABLE `user_auth` (
-  `userId` int(10) NOT NULL AUTO_INCREMENT COMMENT 'Áî®Êà∑ID',
-  `loginName` varchar(20) COLLATE gbk_bin NOT NULL DEFAULT '' COMMENT 'ÁôªÂΩïË¥¶Âè∑',
-  `loginPwd` varchar(50) CHARACTER SET latin1 COLLATE latin1_bin NOT NULL DEFAULT '' COMMENT 'ÁôªÂΩïÂØÜÁ†Å',
-  `nasId` varchar(20) FOREIGN KEY REFERENCES nas_user(`nasId`) COMMENT 'NASË¥¶Âè∑',
+  `userId` int(10) NOT NULL AUTO_INCREMENT COMMENT '”√ªßID',
+  `loginName` varchar(20) COLLATE gbk_bin NOT NULL DEFAULT '' COMMENT 'µ«¬º’À∫≈',
+  `loginPwd` varchar(50) CHARACTER SET latin1 COLLATE latin1_bin NOT NULL DEFAULT '' COMMENT 'µ«¬º√‹¬Î',
+  `nasId` varchar(20) FOREIGN KEY REFERENCES nas_user(`nasId`) COMMENT 'NAS’À∫≈',
 
   PRIMARY KEY (`userId`, `loginName`),
   UNIQUE KEY `only` (`loginName`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk COMMENT='Áî®Êà∑ÊéàÊùÉË°®'
+) ENGINE=InnoDB DEFAULT CHARSET=gbk COMMENT='”√ªß ⁄»®±Ì';

@@ -5,7 +5,7 @@ USE G1551265;
 DROP TABLE IF EXISTS `nas_user`;
 
 CREATE TABLE `nas_user` (
-  `nasId` varchar(20) COLLATE gbk_bin NOT NULL DEFAULT '' COMMENT 'NAS账号',
+  `nasId` varchar(20) COLLATE gbk_bin NOT NULL DEFAULT '' COMMENT 'NAS�˺�',
 
   PRIMARY KEY (`nasId`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk COMMENT='NAS账号表'
+) ENGINE=InnoDB DEFAULT CHARSET=gbk COMMENT='NAS�˺ű�';

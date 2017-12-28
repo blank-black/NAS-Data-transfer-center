@@ -5,13 +5,13 @@ USE G1551265;
 DROP TABLE IF EXISTS `user_login_log`;
 
 CREATE TABLE `user_login_log` (
-  `userId` int(11) FOREIGN KEY REFERENCES user_auth(`userId`) COMMENT 'ç”¨æˆ·ID',
-  `command` tinyint(3) unsigned NOT NULL DEFAULT '1' COMMENT 'æ“ä½œç±»å‹  ',
-  `loginTime` datetime DEFAULT NULL COMMENT 'ç™»å½•æ—¶é—´',
-  `loginIp` varchar(16) NOT NULL DEFAULT '' COMMENT 'ç™»å½•IP',
-  `loginRemark` varchar(30) NOT NULL DEFAULT '' COMMENT 'ç™»å½•å¤‡æ³¨',
-  `logoutTime` datetime DEFAULT NULL COMMENT 'ç™»å‡ºæ—¶é—´',
-  `logoutRemark` varchar(30) NOT NULL DEFAULT '' COMMENT 'ç™»å‡ºå¤‡æ³¨',
+  `userId` int(11) FOREIGN KEY REFERENCES user_auth(`userId`) COMMENT 'ÓÃ»§ID',
+  `command` tinyint(3) unsigned NOT NULL DEFAULT '1' COMMENT '²Ù×÷ÀàĞÍ  ',
+  `loginTime` datetime DEFAULT NULL COMMENT 'µÇÂ¼Ê±¼ä',
+  `loginIp` varchar(16) NOT NULL DEFAULT '' COMMENT 'µÇÂ¼IP',
+  `loginRemark` varchar(30) NOT NULL DEFAULT '' COMMENT 'µÇÂ¼±¸×¢',
+  `logoutTime` datetime DEFAULT NULL COMMENT 'µÇ³öÊ±¼ä',
+  `logoutRemark` varchar(30) NOT NULL DEFAULT '' COMMENT 'µÇ³ö±¸×¢',
 
   PRIMARY KEY (`userId`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk COMMENT='ç™»å½•æ—¥å¿—è¡¨'
+) ENGINE=InnoDB DEFAULT CHARSET=gbk COMMENT='µÇÂ¼ÈÕÖ¾±í';

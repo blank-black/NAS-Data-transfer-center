@@ -5,17 +5,17 @@ USE G1551265;
 DROP TABLE IF EXISTS `user_info`;
 
 CREATE TABLE `user_info` (
-  `userId` int(11) FOREIGN KEY REFERENCES user_auth(`userId`) COMMENT 'ç”¨æˆ·ID',
-  `nickName` varchar(20) NOT NULL DEFAULT '' COMMENT 'ç”¨æˆ·æ˜µç§°',
-  `userSex` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT 'ç”¨æˆ·æ€§åˆ« 0-Female 1-Male',
-  `userEmail` varchar(50) NOT NULL DEFAULT '' COMMENT 'ç”¨æˆ·é‚®ç®±',
-  `emailBindTime` datetime DEFAULT NULL COMMENT 'é‚®ç®±ç»‘å®šæ—¶é—´',
-  `userPhoto` varchar(150) NOT NULL DEFAULT '' COMMENT 'ç”¨æˆ·å¤´åƒ',
-  `createTime` datetime DEFAULT NULL COMMENT 'åˆ›å»ºæ—¶é—´',
-  `updateTime` datetime DEFAULT NULL COMMENT 'ä¿®æ”¹æ—¶é—´',
-  `lastIP` varchar(16) NOT NULL DEFAULT '' COMMENT 'æœ€åç™»å½•IP',
-  `lastTime` datetime DEFAULT NULL COMMENT 'æœ€åç™»å½•æ—¶é—´',
+  `userId` int(11) FOREIGN KEY REFERENCES user_auth(`userId`) COMMENT 'ÓÃ»§ID',
+  `nickName` varchar(20) NOT NULL DEFAULT '' COMMENT 'ÓÃ»§êÇ³Æ',
+  `userSex` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT 'ÓÃ»§ĞÔ±ğ 0-Female 1-Male',
+  `userEmail` varchar(50) NOT NULL DEFAULT '' COMMENT 'ÓÃ»§ÓÊÏä',
+  `emailBindTime` datetime DEFAULT NULL COMMENT 'ÓÊÏä°ó¶¨Ê±¼ä',
+  `userPhoto` varchar(150) NOT NULL DEFAULT '' COMMENT 'ÓÃ»§Í·Ïñ',
+  `createTime` datetime DEFAULT NULL COMMENT '´´½¨Ê±¼ä',
+  `updateTime` datetime DEFAULT NULL COMMENT 'ĞŞ¸ÄÊ±¼ä',
+  `lastIP` varchar(16) NOT NULL DEFAULT '' COMMENT '×îºóµÇÂ¼IP',
+  `lastTime` datetime DEFAULT NULL COMMENT '×îºóµÇÂ¼Ê±¼ä',
 
   PRIMARY KEY (`userId`),
   UNIQUE KEY `only` (`userEmail`)
-) ENGINE=InnoDB DEFAULT CHARSET=gbk COMMENT='ç”¨æˆ·ä¿¡æ¯è¡¨'
+) ENGINE=InnoDB DEFAULT CHARSET=gbk COMMENT='ÓÃ»§ĞÅÏ¢±í';
