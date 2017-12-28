@@ -5,7 +5,7 @@ USE G1551265;
 DROP TABLE IF EXISTS `user_info`;
 
 CREATE TABLE `user_info` (
-  `userId` int(11) FOREIGN KEY REFERENCES user_auth(`userId`) COMMENT '用户ID',
+  `userId` int(10) NOT NULL AUTO_INCREMENT COMMENT '用户ID',
   `nickName` varchar(20) NOT NULL DEFAULT '' COMMENT '用户昵称',
   `userSex` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '用户性别 0-Female 1-Male',
   `userEmail` varchar(50) NOT NULL DEFAULT '' COMMENT '用户邮箱',
@@ -17,5 +17,6 @@ CREATE TABLE `user_info` (
   `lastTime` datetime DEFAULT NULL COMMENT '最后登录时间',
 
   PRIMARY KEY (`userId`),
-  UNIQUE KEY `only` (`userEmail`)
+  UNIQUE KEY `only` (`userEmail`),
+  FOREIGN KEY (`userId`) REFERENCES user_auth(`userId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=gbk COMMENT='用户信息表';
