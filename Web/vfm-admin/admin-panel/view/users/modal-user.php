@@ -124,7 +124,7 @@
                                     <option value=""><?php print $encodeExplorer->getString("unlimited"); ?></option>
                                     <?php
                                     foreach ($_QUOTA as $value) {
-                                        print "<option value=\"".$value."\">".$value." </option>";
+                                        print "<option value=\"".$value."\">".$value." MB</option>";
                                     } ?>
                                 </select>
                             </div> <!-- input-group -->

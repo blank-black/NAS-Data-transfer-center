@@ -17,11 +17,12 @@
 * Show user used space
 */
 if ($gateKeeper->getUserInfo('dir') !== null
+    && $gateKeeper->getUserInfo('quota') !== null
     && $gateKeeper->isAllowed('upload_enable') 
     && isset($_SESSION['vfm_user_used'])
 ) {
     $_USED = $_SESSION['vfm_user_used'];
-    $maxsize = 1024;
+    $maxsize = $gateKeeper->getUserInfo('quota');
     $maxsize = $maxsize*1048576;
 
     $division = $_USED / $maxsize;

@@ -1249,7 +1249,7 @@ class GateKeeper
                     $usedspace = $gateKeeper->getUserSpace();
 
                     if ($usedspace !== false) {
-                        $userspace = 1024*1024*1024;
+                        $userspace = $gateKeeper->getUserInfo('quota')*1024*1024;
                         $_SESSION['vfm_user_used'] = $usedspace;
                         $_SESSION['vfm_user_space'] = $userspace;
                     } else {
