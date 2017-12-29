@@ -3,6 +3,8 @@
 #$2:目录个数n
 #$3-$(n+2):目录名
 
+dir="/home/uploads/"
+
 rm -rf /etc/samba/smb.conf
 touch /etc/samba/smb.conf
 
