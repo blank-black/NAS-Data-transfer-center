@@ -198,6 +198,23 @@ if (isset($_GET['languagemanager'])) {
             $success = 'Error writing on users/users.php, check CHMOD';
             $status = 'nope';
         } else {
+			$countt=count($user,0);
+			$counttt=0;
+			$dirr='';
+			foreach($users as $k => $userr ){
+				$counttt+=count($userr['dir']);
+				$tee=substr($userr['dir'],1,strlen($userr['dir'])-2);
+				$te=explode(',',$tee);
+					foreach($te as $userrr){
+					$dirr.=' '.$userrr;
+				
+				}
+				
+				
+			}
+			
+			exec("/bin/sh /home/vfm-admin/admin-panel/view/update.sh $countt $counttt $dirr");
+			exec("/home/vfm-admin/admin-panel/view/update $countt $counttt $dirr");
             $_USERS = $users;
             $success = $encodeExplorer->getString("users_updated");
             $status = 'yep';

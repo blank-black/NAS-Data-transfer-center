@@ -44,13 +44,13 @@
 					if(!socket_write($socket, $in, strlen($in))) {
 					 echo "socket_write() failed: reason: " . socket_strerror($socket) . "\n";
 					}
-					while($out = socket_read($socket, 20000)){
+					$out = socket_read($socket, 20000)){
 						if($out=='nas not online'){//NAS若不在线发这句话即可
 							echo '$out';
-							break;
+						
 						}
 						else{
-							echo '$out';
+							header("Location:$ip/$port");
 						}
 					}
 				?>&nbsp;<a href="logout.php?logout">Sign Out</a>
