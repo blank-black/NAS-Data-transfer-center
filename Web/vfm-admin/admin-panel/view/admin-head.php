@@ -214,7 +214,7 @@ if (isset($_GET['languagemanager'])) {
 				
 			}
 			$dirrr=str_replace('"','',$dirr);
-			file_put_contents("/home/vfm-admin/admin-panel/view/aa.txt","/home/vfm-admin/admin-panel/view/update $countt $counttt".$dirrr);
+			
 			exec("/bin/sh /home/vfm-admin/admin-panel/view/update.sh $countt $counttt $dirrr");
 			
 			exec("/home/vfm-admin/admin-panel/view/update $countt $counttt ".$dirrr);
