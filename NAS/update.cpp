@@ -25,7 +25,9 @@ int main(int argc,char** argv)
 		user[i] = "	valid users = root ";
 		wlist[i] = "	write list = root ";
 		rlist[i] = "	read list = root ";
-		filename[i] = argv[i + 3];
+		int temp;
+		for(j=0;argv[i+3][j];j++);
+		filename[i] = argv[i + 3].substr(1,j-1);
 		uploads[i] = "uploads/" + filename[i];
 	}
 	for (i = 0; i < n; i++)//±éÀúÄ¿Â¼
