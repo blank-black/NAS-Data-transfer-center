@@ -110,7 +110,51 @@
                             </div>
                         </div> <!-- col-md-6 -->
                     </div> <!-- row -->
-
+					<div class="row" style="min-height:60px;">
+						<div class="col-md-6 form-group cooldropgroup">
+                            <label>
+                                <?php print $encodeExplorer->getString("user_folder"); ?>
+                            </label>
+                            <?php
+                            if (empty($availableFolders)) {
+                                print "<fieldset disabled>";
+                            } ?>
+                            <div class="input-group btn-group cooldrop">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-sitemap fa-fw"></i>
+                                </span>
+                                <select name="changedfolders[]" id="r-userfolders" 
+                                class="form-control assignfolder" multiple="multiple">
+                                <?php
+                                foreach ($setUp->getFolders() as $folder) {
+                                    print "<option value=\"".$folder."\"";
+                                    print ">".$folder."</option>";
+                                } ?>
+                                </select>
+                            </div>
+                            <?php
+                            if (empty($availableFolders)) {
+                                print "</fieldset>";
+                            } ?>
+                        </div>
+						<div class="col-md-6 form-group cooldropgroup">
+                            <label>
+                                <?php print $encodeExplorer->getString("change authority"); ?>
+                            </label>
+                            
+                            <div class="input-group btn-group cooldrop">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-sitemap fa-fw"></i>
+                                </span>
+                                <select class="form-control coolselect getuser getuser-role" name="authority" id="r-authority">
+                                    <option value="1">r</option>
+                                    <option value="2">rw</option>
+                                    
+									</select>
+                            </div>
+                            
+                        </div>
+					</div> <!-- row -->
                     <div class="row" style="min-height:60px;">
                         <div class="col-md-6 userquota cooldropgroup">
                             <label><?php print $encodeExplorer->getString("available_space"); ?></label>
@@ -129,7 +173,12 @@
                                 </select>
                             </div> <!-- input-group -->
                         </div> <!-- col-md-6 userquota -->
+						
+						
+						
+						
                     </div> <!-- row -->
+					
                     <?php
                     /**
                     * Set additional custom fields

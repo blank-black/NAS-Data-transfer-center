@@ -464,7 +464,9 @@ if (isset($_GET['languagemanager'])) {
         }
 
         if ($_GET['users'] == "update") {
-
+			
+			global $user;
+			
             $blockup = false; 
             $blockupmail = false; 
 
@@ -489,7 +491,27 @@ if (isset($_GET['languagemanager'])) {
             $delme = filter_input(
                 INPUT_POST, "delme", FILTER_SANITIZE_STRING
             );
-
+			$authority=filter_input(
+                INPUT_POST, "authority", FILTER_SANITIZE_STRING
+            );
+			$changedfolders=$_POST['changedfolders'];
+			
+			if($authority=='1'){
+				foreach($changedfolders as $folder){
+				$updater->updateUserData($postusernameold,"uploads/".$folder,'1');
+			
+				}
+				
+				
+			}
+			if($authority=='2'){
+				foreach($changedfolders as $folder){
+				$updater->updateUserData($postusernameold,"uploads/".$folder,'2');
+				}
+				
+				
+			}
+			
             if ($delme == $postusernameold) {
                 $updater->deleteUser($postusernameold);
                 updateUsers();

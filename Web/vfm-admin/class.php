@@ -2928,6 +2928,8 @@ class EncodeExplorer
     */
     public function makeLink($logout, $delete, $dir)
     {
+		
+		
         $link = '?';
 
         if ($logout == true) {

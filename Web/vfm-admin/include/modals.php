@@ -288,12 +288,15 @@ if ($gateKeeper->isAccessAllowed()) {
                     </div>
                     <div class="modal-body">
                         <div class="hiddenalert"></div>
+						
                         <?php
                         if (isset($_GET['dir']) && strlen($_GET['dir']) > 0) {
                             $currentdir = "./".trim($_GET['dir'], "/")."/";
+							
                         } else {
                             $currentdir = $setUp->getConfig('starting_dir');
                         }
+						
                         // check if any folder is assigned to the current user
                         if ($gateKeeper->getUserInfo('dir') !== null) {
                             $userpatharray = array();

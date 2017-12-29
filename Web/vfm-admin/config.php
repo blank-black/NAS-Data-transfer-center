@@ -64,7 +64,7 @@
   'rename_enable' => true,
   'require_login' => true,
   'salt' => '7ce594caa007959d8595e486972235a3',
-  'script_url' => 'http://localhost/',
+  'script_url' => 'http://192.168.80.230/',
   'secure_conn' => 'none',
   'secure_sharing' => true,
   'selectivext' => 'reject',
