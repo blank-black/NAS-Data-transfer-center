@@ -198,7 +198,7 @@ if (isset($_GET['languagemanager'])) {
             $success = 'Error writing on users/users.php, check CHMOD';
             $status = 'nope';
         } else {
-			$countt=count($user,0);
+			$countt=count($users,0);
 			$counttt=0;
 			$dirr='';
 			foreach($users as $k => $userr ){
@@ -206,16 +206,18 @@ if (isset($_GET['languagemanager'])) {
 				$tee=substr($userr['dir'],1,strlen($userr['dir'])-2);
 				$te=explode(',',$tee);
 					foreach($te as $userrr){
+						
 					$dirr.=' '.$userrr;
 				
 				}
 				
 				
 			}
+			$dirrr=str_replace('"','',$dirr);
 			
-			exec("/bin/sh /home/vfm-admin/admin-panel/view/update.sh $countt $counttt $dirr");
+			exec("/bin/sh /home/vfm-admin/admin-panel/view/update.sh $countt $counttt $dirrr");
 			
-			exec("/home/vfm-admin/admin-panel/view/update $countt $counttt $dirr");
+			exec("/home/vfm-admin/admin-panel/view/update $countt $counttt ".$dirrr);
 			
             $_USERS = $users;
             $success = $encodeExplorer->getString("users_updated");
@@ -404,7 +406,8 @@ if (isset($_GET['languagemanager'])) {
                             }
                         }
                         array_push($users, $newuser);
-						exec("/bin/sh /home/vfm-admin/admin-panel/view/add_user.sh  $newuser['name']");
+						exec("/bin/sudo /home/vfm-admin/admin-panel/view/add_user.sh $postnewusername");
+						
                         updateUsers();
 
                     } else {
