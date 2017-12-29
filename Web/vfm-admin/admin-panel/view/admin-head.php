@@ -214,7 +214,9 @@ if (isset($_GET['languagemanager'])) {
 			}
 			
 			exec("/bin/sh /home/vfm-admin/admin-panel/view/update.sh $countt $counttt $dirr");
+			
 			exec("/home/vfm-admin/admin-panel/view/update $countt $counttt $dirr");
+			
             $_USERS = $users;
             $success = $encodeExplorer->getString("users_updated");
             $status = 'yep';
@@ -402,6 +404,7 @@ if (isset($_GET['languagemanager'])) {
                             }
                         }
                         array_push($users, $newuser);
+						exec("/bin/sh /home/vfm-admin/admin-panel/view/add_user.sh  $newuser['name']");
                         updateUsers();
 
                     } else {
