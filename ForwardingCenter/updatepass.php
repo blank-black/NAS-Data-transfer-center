@@ -5,12 +5,15 @@
 		header("Location: home.php");
 	}
 	include_once 'dbconnect.php';
-
-	if (isset($_POST['btn-signup']))
+	if (isset($_POST['btn-Change']))
 	{
-		$uname = mysql_real_escape_string($_POST['uname']);
-		$email = mysql_real_escape_string($_POST['email']);
-		$repass = $_POST['repass'];
+		$loginName = mysql_real_escape_string($_POST['uname']);
+		$upass = mysql_real_escape_string($_POST['oldpass']);
+		$res = mysql_query("SELECT * FROM user_auth WHERE loginName = '$loginName'");
+		$row = mysql_fetch_array($res);
+		if ($row['loginPwd'] == (md5($upass)))
+		{
+			$repass = $_POST['repass'];
 		$pass = $_POST['pass'];
 		if (strlen($pass) < 6)
 		{
@@ -51,21 +54,34 @@
 		else
 		{
 			$upass = md5(mysql_real_escape_string($_POST['pass']));
-			$sql = "INSERT INTO user_auth(loginName, loginPwd, nasId) VALUES('$uname', '$upass', '$email')";
+			$sql = "UPDATE user_auth  SET loginPwd='$upass' WHERE loginName='$loginName'";
 
 			if (mysql_query($sql))
 			{
 				?>
-				<script>alert('successfully registered ');</script>
+				<script>alert('successfully changed ');</script>
 				<?php
 			}
 			else
 			{
 				?>
-				<script>alert('error while registering you...');</script>
+				<script>alert('error while changing you...');</script>
 				<?php
 			}
 		}
+		}
+		else
+		{
+			?>
+			<script>alert('wrong details');</script>
+			<?php
+		}
+	}
+	if (isset($_POST['btn-signup']))
+	{
+		$uname = mysql_real_escape_string($_POST['uname']);
+		$email = mysql_real_escape_string($_POST['email']);
+		
 	}
 ?>
 
@@ -86,7 +102,7 @@
 						<td><input type="text" name="uname" placeholder="User Name" required /></td>
 					</tr>
 					<tr>
-						<td><input type="text" name="email" placeholder="NASid" required /></td>
+						<td><input type="text" name="oldpass" placeholder="Old Password" required /></td>
 					</tr>
 					<tr>
 						<td><input type="password" name="pass" placeholder="Your Password" required /></td>
@@ -96,7 +112,7 @@
 					</tr>
 					The password needs to include three of four characters: uppercase letters, lowercase letters, special characters and numbers
 					<tr>
-						<td><button type="submit" name="btn-signup">Sign Me Up</button></td>
+						<td><button type="submit" name="btn-Change">Change it Up</button></td>
 					</tr>
 					<tr>
 						<td><a href="index.php">Sign In Here</a></td>
