@@ -9,7 +9,6 @@ adduser $1
 touch /log/$1.log
 echo "`date +%Y.%m.%d--%H:%M:%S`   Root create $1 success.">>/log/$1.log
 
-#psw must change
-net sam set pwdmustchangenow $1 yes
+
 
 systemctl restart smb.service
