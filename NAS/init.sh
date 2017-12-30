@@ -7,8 +7,6 @@ chmod 777 /log
 rm -rf /etc/samba/smb.conf
 touch /etc/samba/smb.conf
 
-sed -i "s/localhost/${1}/" ./vfm-admin/config.php
-
 rm -rf /etc/httpd/conf/httpd.conf
 cp ./httpd.conf /etc/httpd/conf/httpd.conf
 
@@ -23,13 +21,24 @@ sed -i -e '${gateway}c/GATEWAY="${1%.*}.1"' /etc/sysconfig/network-scripts/ifcfg
 sed -i -e '${dns}c/DNS1="${1%.*}.1"' /etc/sysconfig/network-scripts/ifcfg-ens32
 service network restart
 
-cp vfm-admin /home/vfm-admin
-cp uploads /home/uploads
+cp -R vfm-admin /home/vfm-admin
+cp -R uploads /home/uploads
 cp index.php /home/index.php
 cp vfm-thumb.php /home/vfm-thumb.php
+chmod -R 777 /home
+chmod -R 777 /etc/samba
 
-chmod -R 777 /home/vfm-admin /home/uploads /home/index.php /home/vfm-thumb.php
+sed -i "s/localhost/$1/" /home/vfm-admin/config.php
 
+systemctl enable httpd.service
+systemctl start httpd.service
+
+rm -rf /etc/php.ini
+cp ./php.ini /etc/php.ini
+
+make
+
+cp ./update /home/vfm-admin/admin-panel/view/update
 
 echo "# See smb.conf.example for a more detailed config file or
 # read the smb.conf manpage.
