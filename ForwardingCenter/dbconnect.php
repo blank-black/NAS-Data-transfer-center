@@ -3,7 +3,7 @@
 	{
 		die('oops connection problem ! --> '.mysql_error());
 	}
-	if(!mysql_select_db("G155126"))
+	if(!mysql_select_db("G1551265"))
 	{
 		die('oops database selection problem ! --> '.mysql_error());
 	}

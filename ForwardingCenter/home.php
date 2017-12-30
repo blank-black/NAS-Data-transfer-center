@@ -8,8 +8,8 @@
 	}
 	$res = mysql_query("SELECT * FROM user_auth WHERE loginName=".$_SESSION['user']);
 	$userRow = mysql_fetch_array($res);
-	$port = 1935;//DTC端口
-	$ip = "127.0.0.1";//DTCIP地址
+	$port = 8000;//DTC端口
+	$ip = "192.168.80.230";//DTCIP地址
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
