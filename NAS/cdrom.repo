@@ -1,0 +1,6 @@
+[base]
+name=RedHat
+baseurl=file:///media/cdrom
+enabled=1
+gpgcheck=0
+gpgkey=file:///media/cdrom/RPM-GPG-KEY-redhat-release
