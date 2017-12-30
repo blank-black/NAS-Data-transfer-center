@@ -19,7 +19,7 @@ using namespace std;
 #define BUFSIZE 100
 #define QUEUE 100
 char ID[]="001";
-char ip[]="192.168.2.230";
+char ip[]="192.168.80.230";
 int port=2333;
 
 struct sockaddr_in servaddr,cliaddr;
@@ -72,7 +72,7 @@ void gettime(char TIME[][20],int j)
 	time(&timep);
 	p = localtime(&timep);
 	sprintf(TIME[j], "%d-%d-%d %d:%d:%d", (1900 + p->tm_year), (1 + p->tm_mon), p->tm_mday, p->tm_hour, p->tm_min,
-	        p->tm_sec);
+		p->tm_sec);
 	TIME[j][0] = (1900 + p->tm_year) / 1000 + '0';
 	TIME[j][1] = (1900 + p->tm_year) / 100 % 10 + '0';
 	TIME[j][2] = (1900 + p->tm_year) / 10 % 10 + '0';
@@ -124,11 +124,11 @@ int main(int argc ,char* argv[])
 
 	init_socket(i, sock_cli);
 	connect_server(sock_cli);
-	if (bind(sock_cli, (struct sockaddr *) &cliaddr, sizeof(cliaddr)) == -1)
+/*	if (bind(sock_cli, (struct sockaddr *) &cliaddr, sizeof(cliaddr)) == -1)
 	{
 		perror("bind");
 		exit(1);
-	}
+	}*/
 
 	if (fork() == 0)
 	{
@@ -149,8 +149,8 @@ int main(int argc ,char* argv[])
 						if (buf_recv[0] == 'O' && buf_recv[1] == 'K')
 						{
 							gettime(TIME, i);
-							cout << TIME[i] << "  sockfd" << sock_cli << "  收到OK  " << "  status:"
-							     << client_status << endl;
+							cout << TIME[i] << "  sockfd" << sock_cli << " received OK  " << "  status:"
+							<< client_status << endl;
 							break;
 						}
 						else
@@ -169,8 +169,8 @@ int main(int argc ,char* argv[])
 					{
 						int len = send(sock_cli, &ID, sizeof(ID), 0);
 						gettime(TIME, i);
-						cout << TIME[i] << "  sockfd" << sock_cli << "  发送ID  "
-						     << "  status:" << client_status << endl;
+						cout << TIME[i] << "  sockfd" << sock_cli << " send ID  "
+						<< "  status:" << client_status << endl;
 						if (len < sizeof(ID))
 						{
 							cout << "send failed!" << endl;
@@ -186,7 +186,7 @@ int main(int argc ,char* argv[])
 		}
 
 		///执行端口转发脚本
-		char str[100] = "/home/port_trans.sh ";
+		char str[100] = "/home/test/port_trans.sh ";
 		strcat(str, ip);
 		strcat(str, " ");
 		strcat(str, argv[1]);
