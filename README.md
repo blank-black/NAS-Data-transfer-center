@@ -5,11 +5,16 @@
 
 ## 目录
 
+* [InstallingPackages](#InstallingPackages)
 * [NAS](#NAS)
 * [Web](#Web)
 * [ForwardingCenter](#ForwardingCenter)
 
 ***
+
+InstallingPackages
+---
+此文件夹包含安装包的配置和使用。
 
 NAS
 ---
